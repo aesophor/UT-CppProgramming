@@ -1,0 +1,4 @@
+hello world
+this content
+is from
+file aaa.txt, wow
