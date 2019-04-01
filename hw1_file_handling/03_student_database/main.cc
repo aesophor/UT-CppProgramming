@@ -35,6 +35,7 @@ int main(int argc, char* args[]) {
       << db << endl;
 
     int option = 0;
+    cout << "> ";
     cin >> option;
     
     switch (option) {
