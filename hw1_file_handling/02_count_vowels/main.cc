@@ -3,6 +3,7 @@
 #include <string>
 
 using std::cout;
+using std::cerr;
 using std::endl;
 using std::string;
 using std::ifstream;
@@ -19,6 +20,12 @@ int main(int argc, char* args[]) {
 
   // Open the file, read it line by line, and count the vowels.
   ifstream file(args[1]);
+  
+  if (!file.is_open()) {
+    cerr << "Failed to open " << args[1] << endl;
+    return EXIT_FAILURE;
+  }
+
   string line;
   while (std::getline(file, line)) {
     for (auto c : line) {
