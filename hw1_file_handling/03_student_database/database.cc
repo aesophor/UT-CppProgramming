@@ -46,15 +46,14 @@ double Database::GetHighest(int course_index) const {
 
 
 ostream& operator<< (ostream& os, const Database& db) {
-  // If we're writing to a file, write the number of courses first.
-  if (&os != &cout) {
+  if (&os == &cout) {
+    os << "Student\t";
+  } else {
+    // If we're writing to a file, write the number of courses first.
     os << db.courses_.size() << " ";
   }
 
   // Print course names.
-  if (&os == &cout) {
-    os << "Student\t";
-  }
   for (auto& name : db.courses_) {
     os << name << "\t";
   }
@@ -65,11 +64,9 @@ ostream& operator<< (ostream& os, const Database& db) {
   if (&os != &cout) {
     os << db.students_.size() << endl;
   }
-
   for (auto& record : db.students_) {
     os << record.second << endl; // student object
   }
-
 
   // If we're writing to cout, write
   // 1. the average score of each course.
