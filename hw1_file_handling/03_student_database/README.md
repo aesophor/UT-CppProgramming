@@ -8,7 +8,7 @@ A simple student database which...
 What if there are a lot of students in this database? What's the time complexity to find a student in the database?
 
 * std::vector<Student> and **Linear Search**
-  * If std::vector<Student> is used, the time complexity of finding a student is O(n).
+  * the time complexity of finding a student is O(n).
 
 * If Student::id exists, then **Binary Search** can be used
   * but the time complexity to find a student is still O(log n).
