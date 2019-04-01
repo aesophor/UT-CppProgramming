@@ -7,6 +7,7 @@
 
 using std::cin;
 using std::cout;
+using std::cerr;
 using std::endl;
 using std::string;
 using std::ifstream;
@@ -57,7 +58,12 @@ int main(int argc, char* args[]) {
         string filename;
         cin >> filename;
         ifstream infile(filename);
-        infile >> db;
+        if (infile.is_open()) {
+          infile >> db;
+        } else {
+          cerr << "Failed to open " << filename << endl;
+        }
+        infile.close();
         break; }
 
       case MenuOption::EXPORT: {
@@ -65,7 +71,12 @@ int main(int argc, char* args[]) {
         string filename;
         cin >> filename;
         ofstream outfile(filename);
-        outfile << db;
+        if (outfile.is_open()) {
+          outfile << db;
+        } else {
+          cerr << "Failed to open " << filename << endl;
+        }
+        outfile.close();
         break; }
 
       default: {
