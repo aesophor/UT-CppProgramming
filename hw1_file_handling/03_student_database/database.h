@@ -16,6 +16,9 @@ public:
   void Add(const std::string& course_name);
   void Add(const Student& student);
 
+  double GetAverage(int course_index) const;
+  double GetHighest(int course_index) const;
+
   friend std::ostream& operator<< (std::ostream& os, const Database& db);
   friend std::istream& operator>> (std::istream& is, Database& db);
 

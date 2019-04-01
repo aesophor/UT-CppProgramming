@@ -11,7 +11,7 @@ public:
   virtual ~Student();
 
   const std::string& name() const;
-  const std::vector<int> scores() const;
+  const std::vector<int>& scores() const;
 
   static int score_count;
 

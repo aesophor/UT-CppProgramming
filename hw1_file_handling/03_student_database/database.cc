@@ -22,6 +22,29 @@ void Database::Add(const Student& student) {
 }
 
 
+double Database::GetAverage(int course_index) const {
+  int sum = 0;
+
+  // Iterate through the unordered_map to sum the scores of this course.
+  for (auto& record : students_) {
+    sum += record.second.scores().at(course_index);
+  }
+
+  return (students_.size() > 0) ? (double) sum / students_.size() : 0;
+}
+
+double Database::GetHighest(int course_index) const {
+  int highest = 0;
+
+  // Iterate through the unordered_map to get the highest score of this course.
+  for (auto& record : students_) {
+    highest = std::max(highest, record.second.scores().at(course_index));
+  }
+
+  return (students_.size() > 0) ? highest : 0;
+}
+
+
 ostream& operator<< (ostream& os, const Database& db) {
   // If we're writing to a file, write the number of courses first.
   if (&os != &cout) {
@@ -42,6 +65,18 @@ ostream& operator<< (ostream& os, const Database& db) {
 
   for (auto& record : db.students_) {
     os << record.second << endl; // student object
+  }
+
+
+  // If we're writing to cout, write
+  // 1. the average score of each score.
+  // 2. the highest score of each score.
+  if (&os == &cout) {
+    for (size_t i = 0; i < db.courses_.size(); i++) {
+      os << db.courses_.at(i)
+        << " avg: " << db.GetAverage(i)
+        << " highest: " << db.GetHighest(i) << endl;
+    }
   }
 
   return os;

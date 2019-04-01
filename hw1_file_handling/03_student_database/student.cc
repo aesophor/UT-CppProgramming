@@ -23,6 +23,10 @@ const string& Student::name() const {
   return name_;
 }
 
+const vector<int>& Student::scores() const {
+  return scores_;
+}
+
 ostream& operator<< (ostream& os, const Student& s) {
   // Write student name to ostream.
   os << s.name_ << " ";
