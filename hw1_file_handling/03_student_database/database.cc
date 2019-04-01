@@ -68,9 +68,7 @@ ostream& operator<< (ostream& os, const Database& db) {
     os << record.second << endl; // student object
   }
 
-  // If we're writing to cout, write
-  // 1. the average score of each course.
-  // 2. the highest score of each course.
+  // Write average/highest score of each course.
   if (&os == &cout) {
     for (size_t i = 0; i < db.courses_.size(); i++) {
       os << db.courses_.at(i)
