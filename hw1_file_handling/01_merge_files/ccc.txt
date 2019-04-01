@@ -1,0 +1,6 @@
+hello world
+this content
+is from
+file aaa.txt, wow
+wow cpp programming wow
+hello from bbb.txt yaaa

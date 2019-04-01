@@ -2,6 +2,8 @@
 #include <fstream>
 #include <string>
 
+using std::cout;
+using std::cerr;
 using std::endl;
 using std::string;
 using std::ifstream;
@@ -17,6 +19,14 @@ int main(int argc, char* args[]) {
   ifstream input_file(kInputFilename1);
   string line;
 
+  if (!output_file.is_open()) {
+    cerr << "Unable to open " << kOutputFilename << endl;
+    return EXIT_FAILURE;
+  } else if (!input_file.is_open()) {
+    cerr << "Unable to open " << kInputFilename1 << endl;
+    return EXIT_FAILURE;
+  }
+
   // Open aaa.txt and append its content into ccc.txt
   while (std::getline(input_file, line)) {
     output_file << line << endl;
@@ -25,10 +35,19 @@ int main(int argc, char* args[]) {
 
   // Open bbb.txt and append its content into ccc.txt.
   input_file = ifstream(kInputFilename2);
+
+  if (!input_file.is_open()) {
+    cerr << "Unable to open " << kInputFilename2 << endl;
+    return EXIT_FAILURE;
+  }
+
   while (std::getline(input_file, line)) {
     output_file << line << endl;
   }
   input_file.close();
 
   output_file.close();
+
+  cout << "Files merged successfully. See " << kOutputFilename << endl;
+  return EXIT_SUCCESS;
 }
