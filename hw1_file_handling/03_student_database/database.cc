@@ -52,8 +52,11 @@ ostream& operator<< (ostream& os, const Database& db) {
   }
 
   // Print course names.
+  if (&os == &cout) {
+    os << "Student\t";
+  }
   for (auto& name : db.courses_) {
-    os << name << " ";
+    os << name << "\t";
   }
   os << endl;
 

@@ -29,11 +29,11 @@ const vector<int>& Student::scores() const {
 
 ostream& operator<< (ostream& os, const Student& s) {
   // Write student name to ostream.
-  os << s.name_ << " ";
+  os << s.name_ << "\t";
 
   // Write all scores to ostream.
   for (auto score : s.scores_) {
-    os << score << " ";
+    os << score << "\t";
   }
 
   return os;
