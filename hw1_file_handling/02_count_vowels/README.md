@@ -8,6 +8,7 @@ $ make run
 ```
 
 ## Result
+The filename should be provided as a command line argument.
 ```
 $ ./main test_3_vowels.txt 
 This file has 3 vowels.
