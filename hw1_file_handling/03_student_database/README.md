@@ -5,7 +5,7 @@ A simple student database which...
 * import/export database
 
 ## Complexity Analysis
-What if there are a lot of students in this database?
+What if there are a lot of students in this database? What's the time complexity to find a student in the database?
 
 * std::vector<Student> and **Linear Search**
   * If std::vector<Student> is used, the time complexity of finding a student is O(n).
