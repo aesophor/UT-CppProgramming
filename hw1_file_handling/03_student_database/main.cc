@@ -45,14 +45,14 @@ int main(int argc, char* args[]) {
         string course_name;
         cin >> course_name;
         db.Add(course_name);
-        break; }
-
+        break;
+      }
       case MenuOption::ADD_STUDENT: {
         Student s;
         cin >> s;
         db.Add(s);
-        break; }
-
+        break;
+      }
       case MenuOption::IMPORT: {
         cout << "Please enter the filename: ";
         string filename;
@@ -64,8 +64,8 @@ int main(int argc, char* args[]) {
           cerr << "Failed to open " << filename << endl;
         }
         infile.close();
-        break; }
-
+        break;
+      }
       case MenuOption::EXPORT: {
         cout << "Please enter the filename: ";
         string filename;
@@ -77,11 +77,12 @@ int main(int argc, char* args[]) {
           cerr << "Failed to open " << filename << endl;
         }
         outfile.close();
-        break; }
-
+        break;
+      }
       default: {
         cout << "Error: No such option. Retry." << endl;
-        break; }
+        break;
+      }
     }
   }
 
