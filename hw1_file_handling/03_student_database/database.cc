@@ -14,7 +14,7 @@ Database::~Database() {}
 
 void Database::Add(const std::string& course_name) {
   courses_.push_back(course_name);
-  Student::score_count++;
+  Student::set_score_count(Student::score_count() + 1);
 }
 
 void Database::Add(const Student& student) {
@@ -89,10 +89,12 @@ istream& operator>> (istream& is, Database& db) {
 
   // If we are reading from a file stream, then
   // read the number of course names first.
-  is >> Student::score_count;
+  int score_count = 0;
+  is >> score_count;
+  Student::set_score_count(score_count);
 
   // Read all course names into our vector.
-  for (int i = 0; i < Student::score_count; i++) {
+  for (int i = 0; i < Student::score_count(); i++) {
     string course_name;
     is >> course_name;
     db.courses_.push_back(course_name);

@@ -12,11 +12,20 @@ using std::ostream;
 
 
 // Tell compiler the static class member Student::score_count exists.
-int Student::score_count = 0;
+int Student::score_count_ = 0;
 
 Student::Student() {}
 
 Student::~Student() {}
+
+
+int Student::score_count() {
+  return Student::score_count_;
+}
+
+void Student::set_score_count(int count) {
+  Student::score_count_ = count;
+}
 
 
 const string& Student::name() const {
@@ -45,9 +54,9 @@ istream& operator>> (istream& is, Student& s) {
   }
   is >> s.name_;
 
-  for (int i = 0; i < Student::score_count; i++) {
+  for (int i = 0; i < Student::score_count_; i++) {
     if (&is == &cin) {
-      cout << "Enter score (" << i + 1 << "/" << Student::score_count << "): ";
+      cout << "Enter score (" << i + 1 << "/" << Student::score_count_ << "): ";
     }
     int score = 0;
     is >> score;
