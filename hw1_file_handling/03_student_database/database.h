@@ -27,4 +27,4 @@ class Database {
   std::unordered_map<std::string, Student> students_; // random access :)
 };
 
-#endif
+#endif // DATABASE_H_

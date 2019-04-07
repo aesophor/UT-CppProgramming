@@ -26,4 +26,4 @@ class Student {
   std::vector<int> scores_;
 };
 
-#endif
+#endif // STUDENT_H_
