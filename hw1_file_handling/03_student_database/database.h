@@ -9,7 +9,7 @@
 #include "student.h"
 
 class Database {
-public:
+ public:
   Database() = default;
   virtual ~Database() = default;
 
@@ -22,7 +22,7 @@ public:
   friend std::ostream& operator<< (std::ostream& os, const Database& db);
   friend std::istream& operator>> (std::istream& is, Database& db);
 
-private:
+ private:
   std::vector<std::string> courses_; // course names
   std::unordered_map<std::string, Student> students_; // random access :)
 };

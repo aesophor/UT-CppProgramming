@@ -6,7 +6,7 @@
 #include <vector>
 
 class Student {
-public:
+ public:
   Student() = default;
   virtual ~Student() = default;
 
@@ -19,7 +19,7 @@ public:
   friend std::ostream& operator<< (std::ostream& os, const Student& s);
   friend std::istream& operator>> (std::istream& is, Student& s);
 
-private:
+ private:
   static int score_count_;
 
   std::string name_;
