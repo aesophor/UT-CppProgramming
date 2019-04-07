@@ -14,11 +14,6 @@ using std::ostream;
 // Tell compiler the static class member Student::score_count exists.
 int Student::score_count_ = 0;
 
-Student::Student() {}
-
-Student::~Student() {}
-
-
 int Student::score_count() {
   return Student::score_count_;
 }

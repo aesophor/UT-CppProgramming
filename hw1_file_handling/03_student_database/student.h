@@ -7,8 +7,8 @@
 
 class Student {
 public:
-  Student();
-  virtual ~Student();
+  Student() = default;
+  virtual ~Student() = default;
 
   static int score_count();
   static void set_score_count(int count);

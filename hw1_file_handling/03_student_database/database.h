@@ -10,8 +10,8 @@
 
 class Database {
 public:
-  Database();
-  virtual ~Database();
+  Database() = default;
+  virtual ~Database() = default;
 
   void Add(const std::string& course_name);
   void Add(const Student& student);

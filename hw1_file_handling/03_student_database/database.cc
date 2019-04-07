@@ -7,11 +7,6 @@ using std::string;
 using std::istream;
 using std::ostream;
 
-Database::Database() {}
-
-Database::~Database() {}
-
-
 void Database::Add(const std::string& course_name) {
   courses_.push_back(course_name);
   Student::set_score_count(Student::score_count() + 1);
