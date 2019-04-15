@@ -3,6 +3,9 @@ Write a function to calculate factorial of a given number N.
 * If N < 0, throw an exception with message "argument out of bound".
 * If the result > INT_MAX, throw an exception with message "number too large".
 
+## Algorithm
+Dynamic Programming (bottom-up)
+
 ## Result
 ```
 $ ./main
