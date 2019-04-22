@@ -4,9 +4,9 @@
 class Shape {
  protected: // protected ctor -> abstract class
   Shape() = default;
-  virtual ~Shape() = default;
-
+  
  public:
+  virtual ~Shape() = default;
   virtual double area() const = 0;
 };
 

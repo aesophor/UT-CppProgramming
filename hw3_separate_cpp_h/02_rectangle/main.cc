@@ -1,15 +1,17 @@
 #include <iostream>
+#include <memory>
 
 #include "shape.h"
 
 using std::cout;
 using std::endl;
+using std::shared_ptr;
 
 int main() {
   // C++ Polymorphism ^_^
-  Shape* circle = static_cast<Shape*>(new Circle(15));
-  Shape* rect = static_cast<Shape*>(new Rectangle(20, 15));
-  Shape* trapezoid = static_cast<Shape*>(new Trapezoid(5, 10, 15));
+  shared_ptr<Shape> circle = std::make_shared<Circle>(15);
+  shared_ptr<Shape> rect = std::make_shared<Rectangle>(20, 15);
+  shared_ptr<Shape> trapezoid = std::make_shared<Trapezoid>(5, 10, 15);
 
   cout << "Circle(15) area: " << circle->area() << endl;
   cout << "Rectangle(20, 15) area: " << rect->area() << endl;
