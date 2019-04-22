@@ -2,19 +2,18 @@
 #define SHAPE_H_
 
 class Shape {
- protected: // protected ctor -> abstract class
-  Shape() = default;
-  
  public:
   virtual ~Shape() = default;
   virtual double area() const = 0;
+
+ protected: // protected ctor -> abstract class
+  Shape() = default;
 };
 
 class Circle : public Shape {
  public:
   Circle(double radius);
   virtual ~Circle() = default;
- 
   virtual double area() const override;
 
  private:
@@ -25,7 +24,6 @@ class Rectangle : public Shape {
  public:
   Rectangle(double width, double height);
   virtual ~Rectangle() = default;
- 
   virtual double area() const override;
 
  private:
@@ -37,7 +35,6 @@ class Trapezoid : public Shape {
  public:
   Trapezoid(double upper_width, double lower_width, double height);
   virtual ~Trapezoid() = default;
- 
   virtual double area() const override;
 
  private:
