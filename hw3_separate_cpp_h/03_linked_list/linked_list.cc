@@ -10,6 +10,15 @@ LinkedList::Node::Node(int data) : data(data), next() {}
 LinkedList::LinkedList() : head_(), tail_(), size_() {}
 
 
+LinkedList::~LinkedList() {
+  Node* ptr = head_;
+  while (ptr) {
+    Node* next = ptr->next;
+    delete ptr;
+    ptr = next;
+  }
+}
+
 void LinkedList::Insert(int index, int number) {
   if (index > (int) size_) {
     throw out_of_range("LinkedList::Insert index out of range!");

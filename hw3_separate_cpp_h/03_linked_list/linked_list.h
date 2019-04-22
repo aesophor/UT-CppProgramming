@@ -6,7 +6,7 @@
 class LinkedList {
  public:
   LinkedList();
-  virtual ~LinkedList() = default;
+  virtual ~LinkedList();
 
   // Insert number at the specified index.
   void Insert(int index, int number);
