@@ -15,9 +15,16 @@ U10516045 資科三 王冠中
    > list：實際上是使用doubly linked list實作，element在記憶體中非連續，不允許O(1)時間random access，搜索時間是O(n)的線性搜索。
 3. 試簡述舊式標頭與新式標頭的差異。
    > 舊式headers: 有.h後綴名 (e.g., #include <iostream.h>)
-   > 新式headers: 沒有.h後綴名 (e.g., #include <iostream>)
+   >
+   > 新式headers: 沒有.h後綴名 (e.g., #include \<iostream\>)
+   >
+   > 使用舊式header時，compiler通常會回報warning給使用者，表示此header已被deprecated，應使用新式headers。
 4. 試簡述ios類別的主要共用。
+   > 
 5. 如果沒有撰寫處理例外的程式碼，C++的預設處理機制會怎麼做呢？
+   > 在C++中，若有uncaught exception發生，exception handling subsystem會呼叫std::unexpected()函式，此函式預設會呼叫std::terminate()，而std::terminate()又會呼叫std::abort()終止process。
+   > 
+   > user可以用 std::set_unexpected(&func) 來設定自己的 uncaught exception handler以重新拋出一個例外，但如果新拋出的例外在外層仍沒有對應的catch block，terminate()仍會自動被呼叫，程序就會照樣終止。
 6. 關於constructor說明，下列何者正確？
    1. constructor與class同名
    2. constructor可以overload
