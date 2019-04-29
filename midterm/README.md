@@ -13,7 +13,7 @@ U10516045 資科三 王冠中
    >
    > deque：vector只提供push_back()和pop_back()，而deque除了允許從back存取之外還允許從front存取。但deque的資料在記憶體中未必是連續的。
    >
-   > list：實際上是使用doubly linked list實作，element在記憶體中非連續，不允許O(1)時間random access，搜索時間是O(n)的線性搜索。
+   > list：實際上是使用doubly linked list實作，其elements在記憶體中非連續，不允許O(1)時間random access，搜索時間是O(n)的線性搜索。
    
 3. 試簡述舊式標頭與新式標頭的差異。
    > 舊式headers: 有.h後綴名 (e.g., #include \<iostream.h\>)
