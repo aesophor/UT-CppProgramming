@@ -77,7 +77,7 @@ int main() {
   array<int, 11> weight = {1, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1};
   array<int, 11> nums = {};
 
-  int ch = ConvertFirstChar(std::toupper(input.front()));
+  int ch = ConvertFirstChar(toupper(input.front()));
 
   if (ch != 0) {
     nums[1] = (ch % 10) * weight[1];
