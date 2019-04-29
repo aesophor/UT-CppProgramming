@@ -8,6 +8,9 @@ U10516045 資科三 王冠中
    >
    > 例如：std::vector 即是 std namespace 下的 vector class，使用者可以自訂一個namespace然後也寫一個自己的vector class
 2. 請簡述vector、deque、list容器的功能。
+   > vector：傳統的array大小是固定的，而vector底層也是使用array儲存資料，但它會視資料的量動態縮放大小，所以大小是彈性的。此外因爲vector內部資料在記憶體中是連續的，可直接使用 operator[] 在O(1)時間存取資料。
+   > deque：vector只提供push_back()和pop_back()，而deque除了允許從back存取之外還允許從front存取。內部資料在記憶體中未必是連續的。
+   > list：實際上是使用doubly linked list實作，element在記憶體中非連續，不允許O(1)時間random access，搜索時間是O(n)的線性搜索。
 3. 試簡述舊式標頭與新式標頭的差異。
 4. 試簡述ios類別的主要共用。
 5. 如果沒有撰寫處理例外的程式碼，C++的預設處理機制會怎麼做呢？
