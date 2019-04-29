@@ -5,6 +5,7 @@
 using namespace std;
 
 int main() {
+  // Polymorphism using raw pointers.
   Shape* triangle = new Triangle();
   Shape* circle = new Circle();
   Shape* rectangle = new Rectangle();
