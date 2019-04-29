@@ -23,7 +23,19 @@ U10516045 資科三 王冠中
    > 使用舊式header時，compiler通常會回報warning給使用者，表示此header已被deprecated，應使用新式headers。
    
 4. 試簡述ios類別的主要功用。
-   > 
+   > ios類別提供數個file open flags，讓user用C++操作檔案時可以決定檔案的開啓方式，例如：
+   >
+   > ios::in    允許從stream讀取檔案內容
+   >
+   > ios::out   允許用stream寫入資料到檔案
+   >
+   > ios::ate   開啓檔案時file pointer在EOF (user可自行使用seek改變file pointer)
+   >
+   > ios::app   以append模式寫入資料到檔案
+   >
+   > ios::trunc 若檔案已存在，清除檔案內容
+   >
+   > ios::binary 以二進制方式開啓檔案
    
 5. 如果沒有撰寫處理例外的程式碼，C++的預設處理機制會怎麼做呢？
    > 在C++中，若有uncaught exception發生，exception handling subsystem會呼叫std::unexpected()函式，此函式預設會呼叫std::terminate()，而std::terminate()又會呼叫std::abort()終止process。
