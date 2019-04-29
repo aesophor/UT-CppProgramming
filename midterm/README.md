@@ -4,9 +4,9 @@ U10516045 資科三 王冠中
 ## 問答題
 1. 請簡述namespace命名空間的功能。
    > Namespace是C++中，預防開發大型專案時發生name conflicts的機制。
-   > 不同namespace下可以存在相同名稱的variables、functions、class/struct等等，並利用 :: 運算子來解析範疇(指明所屬的namespace)。
+   > 不同namespaces下可以存在相同名稱的variables、functions、class/struct等等，並利用 :: 運算子來解析範疇(指明所屬的namespace)。
    >
-   > 例如：std::vector 即是 std namespace 下的 vector class，使用者可以自訂一個namespace然後也寫一個自己的vector class
+   > 例如：std::vector 即是 std namespace 下的 vector class，使用者可以自訂一個namespace然後也寫一個自己的vector class（定義在自己的namespace裏面）
    
 2. 請簡述vector、deque、list容器的功能。
    > vector：傳統的array大小是固定的，而vector底層也是使用array儲存資料，但它會視資料的量動態縮放大小，所以大小是彈性的。此外因爲vector內部資料在記憶體中是連續的，可直接使用 operator[] 在O(1)時間存取資料。
@@ -42,7 +42,7 @@ U10516045 資科三 王冠中
    > 
    > user可以用 std::set_unexpected(&func) 來設定自己的 uncaught exception handler以重新拋出一個例外，但如果新拋出的例外在外層仍沒有對應的catch block，terminate()仍會自動被呼叫，程序就會照樣終止。
    
-6. 關於constructor說明，下列何者正確？
+6. 關於constructor說明，下列何者正確？ （複選）
    1. constructor與class同名
    2. constructor可以overload
    3. constructor必須有return value
