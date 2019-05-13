@@ -1,0 +1,21 @@
+Inserting (1,60): 
+1: 60
+
+Inserting (2, 99): 
+2: 99
+1: 60
+
+Inserting (3, 84): 
+2: 99
+3: 84
+1: 60
+
+Removing 1: 
+2: 99
+3: 84
+
+Removing 2:
+3: 84
+
+Removing 3: 
+

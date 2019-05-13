@@ -1,0 +1,6 @@
+./main
+Sales0: 80 85 66 64 (total: 295)
+Sales1: 99 91 95 92 (total: 377)
+Sales2: 55 12 74 32 (total: 173)
+
+Total score: 377 295 173 
