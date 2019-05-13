@@ -9,6 +9,6 @@ int main() {
   m[3] = 3;
   cout << "m[3]:" << m[3] << endl;
 
-  m[3] = 5;
+  m[3] = 5; // 直接覆寫原value
   cout << "m[3]:" << m[3] << endl;
 }
